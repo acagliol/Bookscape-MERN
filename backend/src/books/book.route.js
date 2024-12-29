@@ -1,7 +1,7 @@
 
 const express = require('express');
 const Book = require('./book.model');
-const { postABook, getAllBooks, getSingleBook, UpdateBook, deleteBook } = require('./book.controller');
+const { postABook, getAllBooks, getSingleBook, UpdateBook, deleteABook } = require('./book.controller');
 const router = express.Router();
 
 //frontend => backend server => controller => book schema => db => send data to server => frontend
@@ -29,7 +29,7 @@ router.put("/edit/:id", UpdateBook);
 
 // delete book
 
-router.delete("/delete/:id", deleteBook); 
+router.delete("/:id", deleteABook); 
 
 
 

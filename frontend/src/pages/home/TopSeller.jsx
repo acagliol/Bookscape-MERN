@@ -9,6 +9,7 @@ import { Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { useFetchAllBooksQuery } from "../../redux/features/cart/bookApi";
 
 const categories = [
   "Choose a genre",
@@ -19,14 +20,9 @@ const categories = [
 ];
 
 const TopSeller = () => {
-  const [books, setBooks] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("Choose a genre");
 
-  useEffect(() => {
-    fetch("books.json")
-      .then((res) => res.json())
-      .then((data) => setBooks(data));
-  }, []);
+  const {data: books = []} = useFetchAllBooksQuery();
 
   const filteringBooks =
     selectedCategory === "Choose a genre"
@@ -34,8 +30,6 @@ const TopSeller = () => {
       : books.filter(
           (book) => book.category === selectedCategory.toLowerCase()
         );
-
-  console.log(filteringBooks);
 
   return (
     <div className="py-10">

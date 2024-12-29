@@ -59,7 +59,7 @@ const UpdateBook = async (req, res) => {
 }
 
 
-const deleteBook = async (req, res) => {
+const deleteABook = async (req, res) => {
     try {
         const {id} = req.params
         const deletedBook = await Book.findByIdAndDelete(id);
@@ -82,6 +82,6 @@ module.exports = {
     getAllBooks,
     getSingleBook,
     UpdateBook,
-    deleteBook,
+    deleteABook,
  
 };
