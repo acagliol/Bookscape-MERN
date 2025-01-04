@@ -1,7 +1,6 @@
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import getBaseUrl from '../../../utils/baseUrl';
-
+import getBaseUrl from '../../../utils/baseURL';
 
 const ordersApi = createApi({
     reducerPath: 'ordersApi',
@@ -16,7 +15,7 @@ const ordersApi = createApi({
                 url: "/",
                 method: "POST",
                 body: newOrder,
-                credentials: "include",
+                credentials: 'include',
             })
         })
     })

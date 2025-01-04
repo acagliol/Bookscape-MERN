@@ -26,6 +26,9 @@ const Navbar = () => {
   const handleLogOut = () => {
     logout()
   }
+  // const logged = () => {
+  //   console.log(currentUser.email)
+  // }
 
   return (
     <header className="max-w-screen-2xl mx-auto px-4 py-6">
@@ -88,9 +91,12 @@ const Navbar = () => {
             <HiOutlineHeart className="size-6"/>
           </button>
           <Link to = "/cart" className="bg-primary p-1 sm:px-6 py-2 flex items-center">
-            <HiShoppingCart className=""/> {
+            <HiShoppingCart 
+            // onClick={logged()}
+            className=""/> {
               cartItems.length > 0 ? <span className="text-sm font-semibold sm:ml-1">{cartItems.length}</span> : <span className="text-sm font-semibold sm:ml-1">0</span>
             }
+          
           </Link>
         </div>
       </nav>

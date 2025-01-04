@@ -20,6 +20,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       await loginUser(data.email, data.password);
+      console.log(data.email)
       alert("Login successful")
       navigate("/")
     } catch (error) {
