@@ -9,7 +9,6 @@ export const useAuth = () => {
 }
 
 const googleProvider = new GoogleAuthProvider();
-
 // authProvider
 export const AuthProvide = ({children}) => {
     const [currentUser, setCurrentUser] = useState(null);
