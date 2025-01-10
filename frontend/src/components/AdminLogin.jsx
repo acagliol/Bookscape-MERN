@@ -1,14 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaGoogle } from "react-icons/fa";
 import { useForm } from "react-hook-form";
-import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
   const [message, setMessage] = useState("");
-  const {loginUser, signInWithGoogle} = useAuth(); 
   const navigate = useNavigate()
-
 
   const {
     register,
@@ -19,23 +15,11 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     try {
-      await loginUser(data.email, data.password);
-      console.log(data.email)
-      // alert("Login successful")
+
+        alert("Login successful")
       navigate("/")
     } catch (error) {
       setMessage("Please provide a valid email and password")
-    }
-  }
-
-  const handleGoogleSignIn = async() => {
-    try {
-      await signInWithGoogle();
-      // alert("Login successful")
-      navigate("/")
-    } catch (error) {
-      setMessage("Google sign in failed")
-      console.log(error)
     }
   }
 
@@ -84,29 +68,13 @@ const Login = () => {
           )}
 
           <div>
-            <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold px-8 rounded focus:outline-none">
+            <button className="bg-blue-500 w-full hover:bg-blue-700 text-white font-bold px-8 rounded focus:outline-none">
               Login
             </button>
           </div>
         </form>
 
-        <p className="align-baseline font-meduim mt-4 text-sm">
-          Haven't an account? Please
-          <Link to="/register" className="text-blue-500 hover:text-blue-700">
-            {" "}
-            Register
-          </Link>
-        </p>
-
-        {/* google sign in */}
-        <div className="mt-4">
-          <button 
-          onClick={handleGoogleSignIn}
-          className="w-full flex flex-wrap gap-1 items-center justify-center bg-secondary hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none">
-            <FaGoogle className="mr-2" />
-            Sign in with Google
-          </button>
-        </div>
+        
         <p className="mt-5 text-center text-gray-500 text-xs">
           ©2025 Book Store. All rights reserved.
         </p>

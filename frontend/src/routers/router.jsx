@@ -9,6 +9,7 @@ import SingleBook from "../pages/books/SingleBook";
 import PrivateRoute from "./PrivateRoute";
 import OrderPage from "../pages/books/OrderPage";
 import AdminRoute from "./AdminRoute";
+import AdminLogin from "../components/AdminLogin";
 
 const router = createBrowserRouter([
   {
@@ -50,7 +51,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/admin",
-    element: <div>Admin Login</div>
+    element: <AdminLogin/>
   },
   {
     path: "/dashboard",
