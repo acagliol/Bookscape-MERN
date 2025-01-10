@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
+import axios from "axios";
+import getBaseURL from "../utils/baseUrl";
 
 const Login = () => {
   const [message, setMessage] = useState("");
@@ -14,35 +16,48 @@ const Login = () => {
   } = useForm();
 
   const onSubmit = async (data) => {
+    console.log(data)
     try {
-
-        alert("Login successful")
-      navigate("/")
+        const response = await axios.post(`${getBaseURL()}/api/auth/admin`, data, {
+            headers: {
+                'Content-Type' : 'application/json',
+            }
+        })
+        const auth = response.data;
+        console.log(auth)
+        if (auth.token) {
+            localStorage.setItem("token", auth.token);
+            setTimeout(() => {
+                localStorage.removeItem('token');
+                alert('Token has been expired, Please login again.')
+                navigate("/admin")
+            })
+        }
     } catch (error) {
       setMessage("Please provide a valid email and password")
     }
   }
 
   return (
-    <div className="h-[calc(100vh-120px)] flex justify-center items-center">
+    <div className="h-screen flex justify-center items-center">
       <div className="w-full max-w-sm mx-auto bg-white shadow-md rounded px-8 pt-6 pb-9 mb-4">
-        <h2 className="text-xl font-semibold mb-4">Please Login</h2>
+        <h2 className="text-xl font-semibold mb-4">Admin Dashboard Login</h2>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="email"
+              htmlFor="username"
             >
-              Email
+              Username
             </label>
 
             <input
-              {...register("email", { required: true })}
-              type="email"
-              name="email"
-              id="email"
-              placeholder="Email Address"
+              {...register("username", { required: true })}
+              type="text"
+              name="username"
+              id="username"
+              placeholder="Username"
               className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow"
             />
           </div>
