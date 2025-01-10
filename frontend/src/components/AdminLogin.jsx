@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import getBaseURL from "../utils/baseUrl";
@@ -30,9 +30,12 @@ const Login = () => {
             setTimeout(() => {
                 localStorage.removeItem('token');
                 alert('Token has been expired, Please login again.')
-                navigate("/admin")
-            })
+                navigate("/")
+            }, 3600 * 1000)
         }
+        alert('Admin Login successful')
+        navigate("/dashboard")
+
     } catch (error) {
       setMessage("Please provide a valid email and password")
     }
