@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import getBaseURL from "../../utils/baseUrl";
+import Loading from "../../components/Loading";
 
 const DashboardLayout = () => {
   const [loading, setLoading] = useState(true);
@@ -24,7 +25,7 @@ const DashboardLayout = () => {
     }
   }, []);
   if (loading) {
-    return <div>Loading...</div>;
+    return <Loading/>
   }
 
   return <div>DashboardLayout</div>;
