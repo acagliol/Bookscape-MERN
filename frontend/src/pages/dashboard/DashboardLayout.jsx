@@ -2,13 +2,15 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import getBaseURL from "../../utils/baseUrl";
 import Loading from "../../components/Loading";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useNavigate } from "react-router-dom";
 import { HiViewGridAdd } from "react-icons/hi";
 import { MdOutlineManageHistory } from "react-icons/md";
 
 const DashboardLayout = () => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState({});
+    const navigate = useNavigate();
+
   useEffect(() => {
     const fetchData = async () => {
       try {
