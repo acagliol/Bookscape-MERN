@@ -1,4 +1,7 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom';
+import Loading from '../../components/Loading';
 
 const Dashboard = () => {
     const [loading, setLoading] = useState(true);
@@ -23,7 +26,9 @@ const Dashboard = () => {
       };
       fetchData();
     }, []);
-  
+  if (loading) {
+    return <Loading />;
+  }
 
   return (
     <div>Dashboard</div>
