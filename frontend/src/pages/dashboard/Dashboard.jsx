@@ -2,12 +2,12 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Loading from '../../components/Loading';
+import getBaseURL from '../../utils/baseUrl';
 
 const Dashboard = () => {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState({});
     const navigate = useNavigate();
-  
     useEffect(() => {
       const fetchData = async () => {
         try {
@@ -26,6 +26,9 @@ const Dashboard = () => {
       };
       fetchData();
     }, []);
+    console.log(data)
+
+
   if (loading) {
     return <Loading />;
   }
