@@ -3,12 +3,16 @@ import InputField from '../addBook/InputField'
 import SelectField from '../addBook/SelectField'
 import { useForm } from 'react-hook-form';
 import { useParams } from 'react-router-dom';
-import { useUpdateBookMutation } from '../../../redux/features/books/bookApi';
+import { useFetchBookByIdQuery, useUpdateBookMutation } from '../../../redux/features/books/bookApi';
 
 const UpdateBook = () => {
     const {id} = useParams();
-    const [updateBook, {isLoading, isError}] = useUpdateBookMutation();
+    const {data: bookData, isLoading, isError} = useFetchBookByIdQuery(id)
+    const [updateBook] = useUpdateBookMutation();
 
+
+    if (isLoading) return <Loading />
+    if (isError) return <div>Error fetching book data</div>
     return (
         <div className="max-w-lg mx-auto md:p-6 p-3 bg-white rounded-lg shadow-md">
           <h2 className="text-2xl font-bold text-gray-800 mb-4">Update Book</h2>
