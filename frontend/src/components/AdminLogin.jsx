@@ -17,6 +17,7 @@ const Login = () => {
 
   const onSubmit = async (data) => {
     console.log(data)
+    // figure out something better
     try {
         const response = await axios.post(`${getBaseURL()}/api/auth/admin`, data, {
             headers: {
