@@ -38,6 +38,9 @@ const router = createBrowserRouter([
         path: "/about",
         element: <div>About</div>,
       },
+      // include contact page
+      // include shop page
+      // change landing page to homepage and shop to search page
       {
         path: "/login",
         element: <Login />,
