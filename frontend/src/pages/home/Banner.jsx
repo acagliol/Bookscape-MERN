@@ -20,3 +20,5 @@ const Banner = () => {
 }
 
 export default Banner
+
+// editing the design of the banner
