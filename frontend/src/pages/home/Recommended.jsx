@@ -60,6 +60,8 @@ import { useFetchAllBooksQuery } from '../../redux/features/books/bookApi';
 // import { Swiper, SwiperSlide } from "swiper/react";
 // import BookCard from "../books/BookCard";
 
+// arrow button doesn't work
+
 const Recommended = () => {
   const { data: books = [] } = useFetchAllBooksQuery();
   return (

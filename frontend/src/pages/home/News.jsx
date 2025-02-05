@@ -110,6 +110,9 @@
 
 // export default News;
 // News.jsx
+
+// arrow key is fucked and image is weird, fix layout 
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import news1 from "../../assets/news/news-1.png";
 import news2 from "../../assets/news/news-2.png";

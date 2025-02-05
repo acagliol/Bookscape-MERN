@@ -117,6 +117,8 @@ import { useAuth } from "../context/AuthContext";
 import bookscapeLogo from "/bookscapeLogo.png";
 import avatarImg from "../assets/avatar.png";
 
+// create about, shop pages in routers.jsx
+
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const cartItems = useSelector(state => state.cart.cartItems);

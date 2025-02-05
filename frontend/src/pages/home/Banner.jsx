@@ -21,6 +21,8 @@
 
 // export default Banner
 
+// fix white background 
+
 // Banner.jsx
 import bannerImg from "../../assets/banner.png";
 const Banner = () => {

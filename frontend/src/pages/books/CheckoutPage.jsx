@@ -198,6 +198,9 @@
 
 // export default CheckoutPage
 
+//remove adress from screen and fix checkout button 
+
+
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import { useForm } from "react-hook-form"
