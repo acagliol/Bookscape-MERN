@@ -6,100 +6,88 @@ import getBaseURL from "../utils/baseURL";
 
 const Login = () => {
   const [message, setMessage] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
 
   const onSubmit = async (data) => {
-    console.log(data)
-    // figure out something better
+    console.log(data);
     try {
-        const response = await axios.post(`${getBaseURL()}/api/auth/admin`, data, {
-            headers: {
-                'Content-Type' : 'application/json',
-            }
-        })
-        const auth = response.data;
-        console.log(auth)
-        if (auth.token) {
-            localStorage.setItem("token", auth.token);
-            setTimeout(() => {
-                localStorage.removeItem('token');
-                alert('Token has been expired, Please login again.')
-                navigate("/")
-            }, 3600 * 1000)
-        }
-        alert('Admin Login successful')
-        navigate("/dashboard")
-
+      const response = await axios.post(`${getBaseURL()}/api/auth/admin`, data, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const auth = response.data;
+      console.log(auth);
+      if (auth.token) {
+        localStorage.setItem("token", auth.token);
+        setTimeout(() => {
+          localStorage.removeItem("token");
+          alert("Session expired, please login again.");
+          navigate("/");
+        }, 3600 * 1000);
+      }
+      alert("Admin Login successful");
+      navigate("/dashboard");
     } catch (error) {
-      setMessage("Please provide a valid email and password")
+      setMessage("Invalid email or password");
     }
-  }
+  };
 
   return (
-    <div className="h-screen flex justify-center items-center">
-      <div className="w-full max-w-sm mx-auto bg-white shadow-md rounded px-8 pt-6 pb-9 mb-4">
-        <h2 className="text-xl font-semibold mb-4">Admin Dashboard Login</h2>
+    <div className="h-screen flex justify-center items-center bg-[#FFF8E1]">
+      <div className="w-full max-w-sm mx-auto bg-[#FDFCEB] shadow-md rounded-lg px-8 pt-6 pb-9">
+        <h2 className="text-2xl font-semibold text-[#9B1C1C] mb-4 text-center">Admin Login</h2>
 
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="username"
-            >
+            <label className="block text-[#9B1C1C] text-sm font-bold mb-2" htmlFor="username">
               Username
             </label>
-
             <input
               {...register("username", { required: true })}
               type="text"
-              name="username"
               id="username"
-              placeholder="Username"
-              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow"
+              placeholder="Enter username"
+              className="shadow appearance-none border border-[#9B1C1C] rounded w-full py-2 px-3 leading-tight focus:outline-none focus:ring-1 focus:ring-[#9B1C1C]"
             />
+            {errors.username && <p className="text-red-500 text-xs mt-1">Username is required</p>}
           </div>
+
           <div className="mb-4">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="password"
-            >
+            <label className="block text-[#9B1C1C] text-sm font-bold mb-2" htmlFor="password">
               Password
             </label>
-
             <input
               {...register("password", { required: true })}
               type="password"
-              name="password"
               id="password"
-              placeholder="Password"
-              className="shadow appearance-none border rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow"
+              placeholder="Enter password"
+              className="shadow appearance-none border border-[#9B1C1C] rounded w-full py-2 px-3 leading-tight focus:outline-none focus:ring-1 focus:ring-[#9B1C1C]"
             />
+            {errors.password && <p className="text-red-500 text-xs mt-1">Password is required</p>}
           </div>
-          {message && (
-            <p className="text-red-500 text-xs italic mb-3">{message}</p>
-          )}
+
+          {message && <p className="text-red-500 text-xs italic mb-3">{message}</p>}
 
           <div>
-            <button className="bg-blue-500 w-full hover:bg-blue-700 text-white font-bold px-8 rounded focus:outline-none">
+            <button
+              className="bg-[#9B1C1C] w-full hover:bg-[#7A1515] text-white font-bold py-2 rounded focus:outline-none transition"
+            >
               Login
             </button>
           </div>
         </form>
 
-        
-        <p className="mt-5 text-center text-gray-500 text-xs">
-          ©2025 Book Store. All rights reserved.
-        </p>
+        <p className="mt-5 text-center text-[#9B1C1C] text-xs">©2025 Book Store. All rights reserved.</p>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Login;
