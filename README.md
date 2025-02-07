@@ -49,7 +49,7 @@ This project was developed as a portfolio piece showcasing **full-stack developm
 
 ### **1️⃣ Clone the Repository**
 ```bash
-git clone https://github.com/your-username/bookscape.git
+git clone https://github.com/acagliol/bookscape.git
 cd bookscape
 ```
 
@@ -61,7 +61,7 @@ cd backend
 npm install
 ```
 
-### Backend Setup  
+### Frontend Setup  
 ```bash
 cd ../frontend
 npm install
@@ -77,16 +77,15 @@ MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 ```
 
+## Environment Setup
 
-# Environment Setup
-
-## Backend `.env`
+### Backend `.env`
 ```ini
 MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_jwt_secret_key
 ```
 
-## Frontend `.env.local`
+### Frontend `.env.local`
 ```ini
 VITE_FIREBASE_API_KEY=your_firebase_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
@@ -97,7 +96,7 @@ VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
 ### 1️⃣ Start the Backend
 ```bash
 cd backend
-npm run dev
+npm run start: dev
 ```
 
 ### 2️⃣ Start the Frontend
@@ -123,7 +122,6 @@ Once started, the project will be available at:
 | POST    | `/api/orders`      | Create a new order     |
 | POST    | `/api/auth/admin`  | Admin login            |
 
-
 ## 🚀 Deployment
 
 The project is deployed using **Vercel** (Frontend) and **MongoDB Atlas** (Database).
@@ -140,19 +138,9 @@ vercel deploy
 
 ---
 
-## 📌 Future Improvements
-
-- 📦 **Wishlist Feature** – Allow users to save books for later.
-- 🌍 **Multilingual Support** – Enable multiple language options.
-- 🚀 **Stripe Payments** – Integrate a real payment system.
-- 📊 **Advanced Analytics** – Improve admin sales tracking.
-
----
-
 ## ✨ Credits
 
 This project was developed as part of my portfolio to showcase **full-stack development skills** with modern web technologies.
 
-📧 **Contact**: [your.email@example.com](mailto:your.email@example.com)  
-🔗 **GitHub**: [github.com/your-username](https://github.com/your-username)
-
+📧 **Contact**: [alejo.cagliolo@outlook.com](mailto:alejo.cagliolo@outlook.com)  
+🔗 **GitHub**: [github.com/acagliol](https://github.com/acagliol)
