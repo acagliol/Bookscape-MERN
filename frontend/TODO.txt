@@ -1,0 +1,3 @@
+// fix small tweaks in design, white space, formatting adaptability
+// figure out a way to get book image to be stored in backend as well, not just text and info, 
+// fix admin ui to change colors etc
