@@ -13,7 +13,7 @@ const Recommended = () => {
 
   return (
     <div className='py-16 bg-[#FFF8E1] text-[#9B1C1C]'>
-      <h2 className="text-4xl font-semibold mb-6">Recommended for You</h2>
+      <h2 className="text-4xl font-semibold mb-6 text-center">Recommended for You</h2>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
@@ -29,7 +29,9 @@ const Recommended = () => {
       >
         {books.length > 0 && books.slice(8, 18).map((book, index) => (
           <SwiperSlide key={index}>
-            <BookCard key={index} book={book} />
+            <div className="p-4 bg-[#FDFCEB] rounded-lg shadow-md">
+              <BookCard key={index} book={book} />
+            </div>
           </SwiperSlide>
         ))}
       </Swiper>
