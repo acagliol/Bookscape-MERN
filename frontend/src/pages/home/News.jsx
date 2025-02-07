@@ -1,18 +1,16 @@
 import React from "react";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import BookCard from "../books/BookCard";
+import { Link } from "react-router-dom";
 
 import news1 from "../../assets/news/news-1.png";
 import news2 from "../../assets/news/news-2.png";
 import news3 from "../../assets/news/news-3.png";
 import news4 from "../../assets/news/news-4.png";
-import { Link } from "react-router-dom";
 
 const news = [
   {
@@ -54,48 +52,39 @@ const news = [
 
 const News = () => {
   return (
-    <div className="py-16 bg-[#FFF8E1] text-[#9B1C1C]">
-      <h2 className="text-4xl font-semibold mb-6">News</h2>
+    <div className="py-16 bg-[#FFF8E1] text-[#9B1C1C] w-full">
+      <h2 className="text-4xl font-semibold mb-6 text-center">News</h2>
 
       <Swiper
         slidesPerView={1}
-        spaceBetween={30}
+        spaceBetween={20}
         navigation
         pagination={{ clickable: true }}
         breakpoints={{
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 2,
-            spaceBetween: 50,
-          },
+          640: { slidesPerView: 1, spaceBetween: 20 },
+          768: { slidesPerView: 2, spaceBetween: 30 },
+          1024: { slidesPerView: 3, spaceBetween: 40 }, // Shows 3 on larger screens
         }}
         modules={[Pagination, Navigation]}
         className="mySwiper"
       >
         {news.map((item) => (
           <SwiperSlide key={item.id}>
-            <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-12">
-              <div className="py-4">
-                <Link to="/">
-                  <h3 className="text-lg font-medium hover:text-blue-500 mb-4">
+            <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-6 p-4 bg-[#FDFCEB] rounded-lg shadow-md">
+              <div className="w-full sm:w-1/2">
+                <Link to="/" className="block">
+                  <h3 className="text-lg font-medium hover:text-blue-500 mb-3">
                     {item.title}
                   </h3>
-                  <div className="w-12 h-[4px] bg-primary mb-5"></div>
+                  <div className="w-12 h-[4px] bg-[#9B1C1C] mb-3"></div>
                   <p className="text-sm text-gray-600">{item.description}</p>
                 </Link>
               </div>
-              <div className="flex-shrink-0">
+              <div className="w-full sm:w-1/2 flex justify-center">
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full object-cover rounded-lg shadow-md"
+                  className="w-full sm:w-auto object-cover rounded-lg shadow-md max-h-40"
                 />
               </div>
             </div>
