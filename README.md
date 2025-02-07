@@ -123,35 +123,6 @@ Once started, the project will be available at:
 | POST    | `/api/orders`      | Create a new order     |
 | POST    | `/api/auth/admin`  | Admin login            |
 
-## 📂 Folder Structure
-
-```pgsql
-bookscape/
-├── backend/
-│   ├── src/
-│   │   ├── books/ (Book management API)
-│   │   ├── orders/ (Order handling API)
-│   │   ├── users/ (User authentication API)
-│   │   ├── middleware/ (Security & JWT verification)
-│   │   ├── stats/ (Admin dashboard analytics)
-│   │   ├── index.js (Main server file)
-│
-├── frontend/
-│   ├── src/
-│   │   ├── assets/ (Images, icons, logos)
-│   │   ├── components/ (Reusable components)
-│   │   ├── pages/ (Screens like Home, Shop, Cart)
-│   │   ├── redux/ (State management)
-│   │   ├── routers/ (App navigation)
-│   │   ├── utils/ (Helper functions)
-│   │   ├── App.jsx (Main React App)
-│   │   ├── main.jsx (Entry point)
-│
-├── README.md
-├── package.json (Project dependencies)
-├── tailwind.config.js (Frontend styling config)
-├── vite.config.js (Frontend dev server config)
-```
 
 ## 🚀 Deployment
 
