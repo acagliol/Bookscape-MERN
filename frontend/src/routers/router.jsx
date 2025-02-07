@@ -15,6 +15,7 @@ import Dashboard from "../pages/dashboard/Dashboard";
 import ManageBooks from "../pages/dashboard/ManageBooks/ManageBooks";
 import AddBook from "../pages/dashboard/addBook/AddBook";
 import UpdateBook from "../pages/dashboard/editBook/UpdateBook";
+import Contact from "../pages/home/Contact";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,11 @@ const router = createBrowserRouter([
         path: "/about",
         element: <div>About</div>,
       },
-      // include contact page
+
+      {
+        path: "/contact",
+        element: <Contact/>,
+      },
       // include shop page
       // change landing page to homepage and shop to search page
       {
