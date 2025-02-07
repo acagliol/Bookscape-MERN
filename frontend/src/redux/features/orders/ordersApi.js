@@ -1,6 +1,6 @@
 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import getBaseUrl from '../../../utils/baseURL';
+import getBaseUrl from '../../../utils/baseURL.js';
 
 const ordersApi = createApi({
     reducerPath: 'ordersApi',
