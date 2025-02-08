@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5173;
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
@@ -9,7 +9,7 @@ require('dotenv').config();
 
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://bookscape-mern.vercel.app/'],
+  origin: ['http://localhost:5173'], //'https://bookscape-mern.vercel.app/'],
   credentials: true,
 }))
 

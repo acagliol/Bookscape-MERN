@@ -108,7 +108,7 @@ npm run dev
 Once started, the project will be available at:
 
 - **Frontend:** [http://localhost:5173](http://localhost:5173)
-- **Backend:** [http://localhost:5000](http://localhost:5000)
+- **Backend:** [http://localhost:5173](http://localhost:5173)
 
 ## 🔥 API Endpoints
 
