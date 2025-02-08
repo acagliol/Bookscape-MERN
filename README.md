@@ -45,7 +45,7 @@ git clone https://github.com/acagliol/bookscape.git
 cd bookscape
 ```
 
-## 2️⃣ Install Dependencies  
+## 2️ Install Dependencies  
 
 ### Backend Setup  
 ```bash
@@ -59,7 +59,7 @@ cd ../frontend
 npm install
 ```
 
-### 3️⃣ Set Up Environment Variables
+### 3️ Set Up Environment Variables
 
 Create a `.env` file in both the backend and frontend with the following:
 
@@ -83,18 +83,11 @@ VITE_FIREBASE_API_KEY=your_firebase_api_key
 VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
 ```
 
-## 🎬 Running the Project
+## Running the Project
 
-### 1️⃣ Start the Backend
 ```bash
 cd backend
-npm run start: dev
-```
-
-### 2️⃣ Start the Frontend
-```bash
-cd frontend
-npm run dev
+npm run start or npm run start:dev
 ```
 
 Once started, the project will be available at:
@@ -102,7 +95,7 @@ Once started, the project will be available at:
 - **Frontend:** [http://localhost:5173](http://localhost:5173)
 - **Backend:** [http://localhost:5173](http://localhost:5173)
 
-## 🔥 API Endpoints
+## API Endpoints
 
 | Method  | Endpoint           | Description             |
 |---------|--------------------|-------------------------|
@@ -114,7 +107,7 @@ Once started, the project will be available at:
 | POST    | `/api/orders`      | Create a new order     |
 | POST    | `/api/auth/admin`  | Admin login            |
 
-## 🚀 Deployment
+## Deployment
 
 The project is deployed using **Vercel** (Frontend) and **MongoDB Atlas** (Database).
 
@@ -128,11 +121,3 @@ cd frontend
 vercel deploy
 ```
 
----
-
-## ✨ Credits
-
-This project was developed as part of my portfolio to showcase **full-stack development skills** with modern web technologies.
-
-📧 **Contact**: [alejo.cagliolo@outlook.com](mailto:alejo.cagliolo@outlook.com)  
-🔗 **GitHub**: [github.com/acagliol](https://github.com/acagliol)
