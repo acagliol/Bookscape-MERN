@@ -9,7 +9,7 @@ require('dotenv').config();
 
 app.use(express.json());
 app.use(cors({
-  origin: ['http://localhost:5173'], //'https://bookscape-mern.vercel.app/'],
+  origin: ['http://localhost:5173', 'https://bookscape-kappa.vercel.app/'],
   credentials: true,
 }))
 
@@ -42,6 +42,8 @@ app.use(express.static(path.resolve(__dirname, './dist/')));
 app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, './dist/', 'index.html'));
 });
+
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)

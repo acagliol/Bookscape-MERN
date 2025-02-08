@@ -1,53 +1,45 @@
-# 📚 Bookscape - Full Stack Bookstore Application
+# **Bookscape - Full Stack Bookstore Application**  
 
-Bookscape is a **full-stack bookstore web application** built with the **MERN (MongoDB, Express, React, Node.js) stack**. This project allows users to browse, purchase books, and manage their orders, while admins can manage book inventory and track sales.  
+Bookscape is a **full-stack bookstore web application** built with the **MERN (MongoDB, Express, React, Node.js) stack**. It allows users to browse and purchase books while enabling administrators to manage inventory and track sales. The project demonstrates **full-stack development, API integration, authentication, and state management**.  
 
-This project was developed as a portfolio piece showcasing **full-stack development, API integration, authentication, and state management**.
+## **Key Features**  
 
----
+### **User Features**  
+- **Browse & Search Books** – View books by categories, search for specific books.  
+- **Shopping Cart & Checkout** – Add/remove books from the cart and proceed to secure checkout.  
+- **Order Management** – View order history.  
+- **User Authentication** – Secure login and registration via Firebase.  
+- **Book Recommendations** – Personalized book suggestions.  
+- **News & Events** – Stay updated on book-related events and announcements.  
 
-## 🚀 Features
+### **Admin Features**  
+- **Manage Books** – Add, update, and delete books from inventory.  
+- **Dashboard Analytics** – Track revenue and sales trends.  
+- **Admin Authentication** – Secure login for admins.  
 
-### **User Features**
-- 📖 **Browse & Search Books** – View books by categories, search for specific books.
-- 🛒 **Shopping Cart & Checkout** – Add/remove books from the cart, and proceed to secure checkout.
-- 📝 **Order Management** – View order history.
-- 🛡 **User Authentication** – Register/login securely with Firebase authentication.
-- ⭐ **Book Recommendations** – Get personalized book suggestions.
-- 📢 **News & Events** – Stay updated on book-related events and news.
+## **Tech Stack**  
 
-### **Admin Features**
-- 📚 **Manage Books** – Add, update, and delete books from the inventory.
-- 📊 **Dashboard Analytics** – Track revenue and sales trends.
-- 👤 **Admin Authentication** – Secure login for admins.
+### **Frontend**  
+- **React.js** – UI development  
+- **TailwindCSS** – Styling  
+- **React Router** – Client-side routing  
+- **Redux Toolkit** – Global state management  
+- **Firebase** – Authentication & user management  
+- **Axios** – API communication  
 
----
+### **Backend**  
+- **Node.js & Express.js** – Server-side framework  
+- **MongoDB & Mongoose** – NoSQL database  
+- **JWT Authentication** – Secure user authentication  
+- **Admin Stats API** – Backend analytics  
 
-## 🛠️ Tech Stack
+### **Deployment**  
+- **Vercel** – Frontend deployment  
+- **MongoDB Atlas** – Cloud-hosted database  
 
-### **Frontend**
-- ⚛️ **React.js** – UI development
-- 🎨 **TailwindCSS** – Styling
-- 🌍 **React Router** – Client-side routing
-- 📦 **Redux Toolkit** – Global state management
-- 🔥 **Firebase** – Authentication & user management
-- 📡 **Axios** – API communication
+## **Installation & Setup**  
 
-### **Backend**
-- 🛠 **Node.js & Express.js** – Server-side framework
-- 🗄 **MongoDB & Mongoose** – NoSQL database
-- 🔐 **JWT Authentication** – Secure user authentication
-- 📊 **Admin Stats API** – Backend analytics
-
-### **Deployment**
-- 🚀 **Vercel** – Frontend deployment
-- 🌍 **MongoDB Atlas** – Cloud-hosted database
-
----
-
-## ⚙️ Installation & Setup
-
-### **1️⃣ Clone the Repository**
+### **1. Clone the Repository**  
 ```bash
 git clone https://github.com/acagliol/bookscape.git
 cd bookscape
