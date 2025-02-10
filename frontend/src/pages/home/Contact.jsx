@@ -2,6 +2,7 @@ import React from "react";
 
 const Contact = () => {
   return (
+    // need to contact form working properly and deploy on vercel
     <div className="bg-[#FFF8E1] text-[#9B1C1C] min-h-screen flex justify-center items-center">
       {/* Main Content */}
       <div className="w-4/5 max-w-6xl bg-[#FDFCEB] p-12 shadow-lg flex flex-wrap justify-between">
@@ -17,6 +18,8 @@ const Contact = () => {
         </div>
 
         {/* Right Section (Form) */}
+
+
         <div className="w-full md:w-1/2">
           <form className="space-y-4">
             <div className="flex gap-4">

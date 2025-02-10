@@ -15,6 +15,7 @@ const categories = [
   "Horror",
   "Adventure",
 ];
+//doesnt display books idk why it worked earlier
 
 const TopSeller = () => {
   const [selectedCategory, setSelectedCategory] = useState("Choose a genre");

@@ -8,6 +8,7 @@ const Shop = () => {
     <>
         <ShopBanner/>
         <TopSeller/>
+
         <Recommended/>
     </>
   )
