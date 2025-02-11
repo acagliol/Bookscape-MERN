@@ -16,7 +16,7 @@ const categories = [
   "Adventure",
 ];
 //doesnt display books idk why it worked earlier
-
+// could be joined terminal
 const TopSeller = () => {
   const [selectedCategory, setSelectedCategory] = useState("Choose a genre");
 
