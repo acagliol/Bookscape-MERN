@@ -88,10 +88,13 @@ VITE_FIREBASE_AUTH_DOMAIN=your_firebase_auth_domain
 ```bash
 cd backend
 npm run start or npm run start:dev
+cd frontend
+npm run dev
 ```
 
 Once started, the project will be available at:
-[http://localhost:5000](http://localhost:5000)
+- **Frontend:** [http://localhost:5173](http://localhost:5173)
+- **Backend:** [http://localhost:5000](http://localhost:5000)
 
 ## API Endpoints
 
@@ -105,17 +108,4 @@ Once started, the project will be available at:
 | POST    | `/api/orders`      | Create a new order     |
 | POST    | `/api/auth/admin`  | Admin login            |
 
-## Deployment
-
-The project is deployed using **Vercel** (Frontend) and **MongoDB Atlas** (Database).
-
-- **Live Website**: *Bookscape*
-- **Backend API**: Hosted on **Render/Vercel**
-
-To deploy your own version:
-
-```bash
-cd frontend
-vercel deploy
-```
 
